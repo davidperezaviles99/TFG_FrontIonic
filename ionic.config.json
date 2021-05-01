@@ -1,0 +1,7 @@
+{
+  "name": "TFG_FrontIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,35 @@
+<ion-content>
+<div class="container">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+        <div *ngIf="submitted && form.invalid">
+          <div *ngFor="let error of errorMessages.email">
+            <div *ngIf="f.email.hasError(error.type)">
+              <small>{{error.message}}</small>
+            </div>
+          </div>
+        </div>
+        <ion-item>
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <div *ngIf="submitted && form.invalid">
+          <div *ngFor="let error of errorMessages.password">
+            <div *ngIf="f.password.hasError(error.type)">
+              <small>{{error.message}}</small>
+            </div>
+          </div>
+        </div>
+        <ion-button type="submit" expand="block">Login</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>

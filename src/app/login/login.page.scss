@@ -1,0 +1,25 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcyan;
+}
+
+ion-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin-top: 10px;
+  text-align: end;
+}
+
+ion-button {
+  margin-top: 20px;
+}
+
+small {
+  color: #eb445a;
+}
