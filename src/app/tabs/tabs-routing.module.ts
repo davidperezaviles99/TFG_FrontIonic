@@ -8,14 +8,17 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        //Ruta del cuaderno de trabajo.
         path: 'tab1',
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
+        //Ruta del apartado de mensajes.
         path: 'tab2',
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
+        //Ruta del perfil de usuario
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },

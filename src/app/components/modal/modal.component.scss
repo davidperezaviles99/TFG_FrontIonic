@@ -1,0 +1,19 @@
+.my-custom-class .modal-wrapper {
+    background: #222;
+  }
+
+ ion-item {
+    /* Applies to the value and placeholder color */
+    color: #545ca7;
+  
+    /* Set a different placeholder color */
+    --placeholder-color: #971e49;
+  
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+
+    --padding-top: 10;
+
+    padding-left: 20px;
+    padding-right: 20px;
+ }

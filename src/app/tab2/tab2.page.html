@@ -7,9 +7,42 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Mensajes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+<ion-grid>
+    <ion-row *ngFor="let message of messages">
+
+      <!--Cuadro de texto con el mensaje de los otros usuarios.-->
+      <ion-col size="9" *ngIf="currentUser !== message.user" class="message other-message">
+        <b>{{ message.user }}</b><br>
+        <span>{{ message.msg }}</span>
+        <div class="time" text-right><br>
+        {{ message.createdAt | date:'short' }}</div>
+      </ion-col>
+
+      <!--Cuadro de texto con el mensaje del usuario actualmente logueado-->
+      <ion-col offset="3" *ngIf="currentUser === message.user" class="message my-message">
+        <b>{{ message.user }}</b><br>
+        <span>{{ message.msg }}</span>
+        <div class="time" text-right><br>
+        {{ message.createdAt | date:'short' }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+<!--Input para escribir y enviar el mensaje-->
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row>
+      <ion-col size="10">
+        <textarea autosize maxRows="4" [(ngModel)]="newMsg" class="message-input"></textarea>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn" (click)="createMessage()">
+          <ion-icon name="send-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

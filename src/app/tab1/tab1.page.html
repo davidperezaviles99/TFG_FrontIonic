@@ -7,15 +7,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Cuaderno de Trabajo</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="primary" routerLink="">
+    <ion-fab-button color="primary" (click)="abrirModal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <div *ngIf="requests?.length>0">
+    <ion-card *ngFor="let item of requests">
+        <ion-card-header class="myHeader">
+            <ion-card-subtitle>{{item.creationTimestamp | date:'longDate'}}</ion-card-subtitle>
+            <ion-card-title>
+                <ion-icon name="document-text-outline"></ion-icon>{{item.id}}
+            </ion-card-title>
+            <ion-card-title>{{item.status.statusName}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <h2>Ciudad: {{item.neighbourhood}}, {{item.cityName}}</h2>
+            <hr>
+            <div style="display: inline-block;" *ngFor="let category of item.categories; index as i">
+                <ion-badge style="margin-right: 10px;" color=atos>{{category.name | titlecase}}</ion-badge>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</div>
+<div *ngIf="requests?.length==0">
+    <ion-card>
+        <ion-card-content>
+            <h2>No has introducido ninguna tarea aún</h2>
+        </ion-card-content>
+    </ion-card>
+</div>
 </ion-content>

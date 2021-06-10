@@ -1,0 +1,47 @@
+
+<!--Header nueva tarea con flecha para cerrar el modal-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button (click)="goTab1()">
+      <ion-icon style="color: white;" slot="" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Añadir nueva tarea
+    </ion-title>
+  </ion-toolbar>
+  <hr>
+  
+  <!--Para seleccionar fecha de la tarea realizada-->
+  <ion-item>
+  <ion-datetime value="" placeholder="Seleccionar fecha"></ion-datetime>
+  </ion-item>
+
+  <!--Para seleccionar la asignatura de la tarea realizada-->
+  <ion-item>
+    <ion-label>Asignatura</ion-label>
+      <ion-select interface="popover" formControlName="asignatura">
+        <ion-select-option [value]="asignatura.id" *ngFor="let asignatura of asignaturas">{{ diario.asignatura.name }}</ion-select-option>
+      </ion-select> 
+  </ion-item>
+  <hr>
+  <!--Para escribir la descripción de la tarea realizada-->
+  <ion-item>
+    <ion-label class="textarea" position="stacked">Textarea</ion-label>
+    <ion-textarea placeholder="placeholder"></ion-textarea>
+  </ion-item>
+    
+</div>
+
+</ion-header>  
+    <!--form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+
+      <div class="selectWrapper">
+        <select class="selectbox" formControlName="asignaturas">
+          <option *ngFor="let asignatura of asignaturas" [value]="asignatura.id">{{ asignatura.name }}</option>
+        </select>
+      </div>
+    </form-->
+<hr>
+
+
+

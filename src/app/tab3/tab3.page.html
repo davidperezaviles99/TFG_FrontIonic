@@ -7,15 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <br>
   <img class="icon" src="https://www.adl-logistica.org/wp-content/uploads/2019/07/imagen-perfil-sin-foto.png" alt="">
 
+  <!--Input con los datos del usuario-->
   <h1 align="center">Tus datos</h1>
   <ion-content padding>
     <ion-item>
@@ -32,7 +29,10 @@
     </ion-item>
     <br>
     <br>
+
+    <!--Botón para modificar el perfil-->
     <ion-button color="primary" expand="block" (click)="saveproducto()">Modificar Perfil</ion-button>
     <br>
-    <ion-button color="danger" expand="block" routerLink="/home">Salir de la Cuenta</ion-button>
+    <!--Botón para cerrar sesión-->
+    <ion-button color="danger" expand="block" (click)="logout()">Salir de la Cuenta</ion-button>
 </ion-content>
