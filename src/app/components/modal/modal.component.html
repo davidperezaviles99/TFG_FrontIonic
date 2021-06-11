@@ -10,12 +10,14 @@
     </ion-title>
   </ion-toolbar>
   <hr>
-  
+  <hr>
   <!--Para seleccionar fecha de la tarea realizada-->
-  <ion-item>
-  <ion-datetime value="" placeholder="Seleccionar fecha"></ion-datetime>
-  </ion-item>
+    <ion-item>
+      <ion-datetime value="" placeholder="Seleccionar fecha"></ion-datetime>
+    </ion-item>
 
+  <hr>
+  <hr>
   <!--Para seleccionar la asignatura de la tarea realizada-->
   <ion-item>
     <ion-label>Asignatura</ion-label>
@@ -24,14 +26,18 @@
       </ion-select> 
   </ion-item>
   <hr>
+  <hr>
   <!--Para escribir la descripción de la tarea realizada-->
   <ion-item>
-    <ion-label class="textarea" position="stacked">Textarea</ion-label>
-    <ion-textarea placeholder="placeholder"></ion-textarea>
+    <ion-label class="" position="stacked">Descripción</ion-label>
+    <ion-textarea ionFocus placeholder=""></ion-textarea>
   </ion-item>
-    
-</div>
+  <hr>
+  <hr>
 
+  <ion-lab>
+      <ion-button class="botontarea" text-align="center" color="primary">Añadir Tarea</ion-button>
+  </ion-lab>
 </ion-header>  
     <!--form [formGroup]="form" (ngSubmit)="onSubmit()"> 
 
@@ -41,7 +47,6 @@
         </select>
       </div>
     </form-->
-<hr>
 
 
 

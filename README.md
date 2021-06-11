@@ -31,14 +31,14 @@ Esto es un proyecto para la gestión y evaluación del alumnado de dual:
 ## *Cambios✒️*
 
 - ### Version 0.1.1:
-  - *README added*
+  - *README añadido*
 
 
 ---
 
-## *Mejoras y sugerencias :arrow_up:*
+## *Mejoras y sugerencias ↗️*
 
-- **
+
 
 ---
 ## *Notas Finales*
